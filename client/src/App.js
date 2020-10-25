@@ -7,6 +7,7 @@ import './App.css';
 //components
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import SignUp from './components/SignUp';
 
 
 
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Navigation></Navigation>
-      
+      <SignUp></SignUp>
       
       <Container>
         <Footer></Footer>

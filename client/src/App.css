@@ -11,3 +11,18 @@
     padding-right: 5rem;
 }
 
+.signUpForm{
+    width:500px 
+}
+
+.buttonCol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+}
+
+.submitBtn {
+    margin-top: 1rem;
+}

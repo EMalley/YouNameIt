@@ -22,6 +22,12 @@ class Navigation extends Component {
         });
     }
 
+    // loadSignUp = () => { 
+    //     this.setState({
+    //         isOpen:
+    //     })
+    // }
+
 
     render() {
         return (
@@ -33,7 +39,7 @@ class Navigation extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <Button className='login' color="info" >Login</Button>
+                                    <Button className='login' color="info" onClick={this.loadSignUp}>Login</Button>
                                     <Button className='register' color="info" >Register</Button>
                                 </NavItem>
                             </Nav>
