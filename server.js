@@ -2,7 +2,11 @@ let express = require('express');
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
 
+const users = require('./routes/api/users');
+
 let app = express();
+
+
 //Body parser middleware
 app.use(bodyParser.json());
 
@@ -14,13 +18,13 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
         console.log('connected to mongoDB')
     }).catch(function (err) {
         console.log(err);
-    })
+    });
 
-//ROUTES
-//app.use('/api/users', users);
+//Use ROUTES
+app.use('/api/users', users);
 
 //run server
- let port = process.env.PORT || 5000;
-app.listen(port, function (){
+let port = process.env.PORT || 5000;
+app.listen(port, function () {
     console.log(`server started on port ${port}`);
 });

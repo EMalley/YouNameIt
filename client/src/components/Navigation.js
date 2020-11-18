@@ -22,12 +22,6 @@ class Navigation extends Component {
         });
     }
 
-    // loadSignUp = () => { 
-    //     this.setState({
-    //         isOpen:
-    //     })
-    // }
-
 
     render() {
         return (

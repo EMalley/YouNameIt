@@ -1,37 +1,23 @@
-let mongoose = require('mongoose');
-let bcrypt =require('bcrypt');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-let Schema = mongoose.Schema;
-
-//Schema for users
-let userSchema = new Schema({
-    name: {
-        firstName: { type: String, required: true, default: "" },
-        lastName: { type: String, required: true, default: "" },
+//create schema
+let UserSchema = new Schema({
+    email: {
+        type: String,
+        required: true
     },
     password: {
         type: String,
-        default: "",
-        required: true
+        required: true,
+        minlength: 5
     },
-    email: {
-        type: String,
-        default: "",
-        required: true
-    },
-    isDeleted: {
-        type: Boolean,
-        default: false
+    name: {
+         type: String,
     }
 });
 
-userSchema.methods.generateHash = function (password) {
-    return bcrypt.hashSync(password, bcrypt.SaltSnyc(8), null)
-};
 
-userSchema.methods.validPassword = function (password) {
-    return bcrypt.compareSync(password, this.password)
-};
-
-let Users = mongoose.model('users', userSchema);
-module.exports = Users;
+//Users is what will call the UserSchema when called upon. 
+let User = mongoose.model("user", UserSchema);
+module.exports = User
